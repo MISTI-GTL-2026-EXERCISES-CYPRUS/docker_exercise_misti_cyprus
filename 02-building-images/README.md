@@ -105,11 +105,12 @@ You should see `my-flask-app` in the list.
 Run a container from your newly built image:
 
 ```bash
-docker run -d -p 5000:5000 --name my-app my-flask-app
+docker run -p 5000:5000 --name my-app my-flask-app
 ```
 
 **Flags explained:**
-- `-d` - Run in detached mode (background)
+
+[//]: # (- `-d` - Run in detached mode &#40;background&#41;)
 - `-p 5000:5000` - Map port 5000 on host to port 5000 in container
 - `--name my-app` - Give the container a friendly name
 - `my-flask-app` - The image to use
