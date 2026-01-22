@@ -152,7 +152,7 @@ You should see a greeting message from your Flask application!
 ### Step 8: Execute commands in the Container
 
 ```bash
-docker exec my-app ls
+docker exec -it my-app bash
 ```
 
 ### Step 9: Stop and Remove the Container
@@ -163,41 +163,6 @@ When you're done:
 docker stop my-app
 docker rm my-app
 ```
-
-## Additional Challenges
-
-### Challenge 1: Modify the Environment Variable
-
-Run the container with a different NAME environment variable:
-
-```bash
-docker run -d -p 5000:5000 -e NAME="YourName" --name my-app my-flask-app
-```
-
-Refresh your browser to see the change!
-
-### Challenge 2: Rebuild After Changes
-
-1. Modify `app.py` to change the message
-2. Rebuild the image: `docker build -t my-flask-app .`
-3. Stop the old container: `docker stop my-app && docker rm my-app`
-4. Run a new container: `docker run -d -p 5000:5000 --name my-app my-flask-app`
-5. Check your changes in the browser
-
-### Challenge 3: Explore the Container
-
-Run an interactive shell inside your running container:
-
-```bash
-docker exec -it my-app bash
-```
-
-Inside the container, you can:
-
-- Explore the file system: `ls -la`
-- Check the working directory: `pwd`
-- View running processes: `ps aux`
-- Exit with: `exit`
 
 ## Key Docker Build Commands
 
